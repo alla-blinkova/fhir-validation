@@ -1,0 +1,7 @@
+D:\ASP.NET\FhirJsonValidator\FhirJsonValidator\bin\Debug\FhirJsonValidator.dll
+D:\ASP.NET\FhirJsonValidator\FhirJsonValidator\bin\Debug\FhirJsonValidator.pdb
+D:\ASP.NET\FhirJsonValidator\FhirJsonValidator\bin\Debug\Newtonsoft.Json.dll
+D:\ASP.NET\FhirJsonValidator\FhirJsonValidator\bin\Debug\Newtonsoft.Json.xml
+D:\ASP.NET\FhirJsonValidator\FhirJsonValidator\obj\Debug\FhirJsonValidator.csprojResolveAssemblyReference.cache
+D:\ASP.NET\FhirJsonValidator\FhirJsonValidator\obj\Debug\FhirJsonValidator.dll
+D:\ASP.NET\FhirJsonValidator\FhirJsonValidator\obj\Debug\FhirJsonValidator.pdb
