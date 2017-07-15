@@ -18,10 +18,10 @@ script_dir = get_script_dir()
 validatorPath = script_dir + '\\FhirValidator\\org.hl7.fhir.validator.jar'
 definitionsPath = script_dir + '\\FhirValidator\\definitions.json.zip'
     
-files = os.listdir(script_dir + '\\resourses') 
+files = os.listdir(script_dir + '\\resourсes') 
 json_files = filter(lambda x: x.endswith('.json'), files)
 for f in json_files:
-    resPath = script_dir + '\\resourses\\' + f
+    resPath = script_dir + '\\resources\\' + f
     cmd = 'java.exe -jar ' + validatorPath + ' ' + resPath + ' -defn ' + definitionsPath
     PIPE = subprocess.PIPE
     p = subprocess.Popen(cmd)

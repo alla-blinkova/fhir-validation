@@ -23,10 +23,10 @@ else:
     schemaPath = script_dir + '\\schemas' + '\\' + sys.argv[1]
 
 
-files = os.listdir(script_dir + '\\resourses') 
+files = os.listdir(script_dir + '\\resources') 
 json_files = filter(lambda x: x.endswith('.json'), files)
 for f in json_files: 
-    resoursePath = script_dir + '\\resourses\\' + f
+    resoursePath = script_dir + '\\resources\\' + f
     PIPE = subprocess.PIPE
     p = subprocess.Popen(cmd + ' ' + schemaPath + ' ' + resoursePath)
     p.wait()

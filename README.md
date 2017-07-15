@@ -1,5 +1,5 @@
 # Fhir-validation
-This project is designed for the validation of FHIR resourses by using different methods, such as JSON schema and FHIR Validator.
+This project is designed for the validation of FHIR resources by using different methods, such as JSON schema and FHIR Validator.
 ## Validation by using JSON schema
 ### Getting started
 1. Install Visual Studio.
@@ -14,7 +14,7 @@ Install-Package Newtonsoft.Json.Schema
 
 ### Running the tests
 1. Put ValidationTest.exe and dll files to the folder "script".
-2. Run the script start_validation.py without parameters to perform validation of all resourses located in the folder "resourses"
+2. Run the script start_validation.py without parameters to perform validation of all resources located in the folder "resources"
 and default schema. 
 To use your own schema, put it to the folder "script/schemas" and run the script with parameter - file name of the schema.
 
@@ -25,4 +25,4 @@ To use your own schema, put it to the folder "script/schemas" and run the script
 3. Clone this repository. Definitions and jar-file with FHIR Validator are located in the folder "FhirValidator".
 ### Running the tests
 To run the validation you need to run script start_validation.py without parameters. 
-It will perform validation of all resourses located in the folder "resourses".
+It will perform validation of all resources located in the folder "resources".
