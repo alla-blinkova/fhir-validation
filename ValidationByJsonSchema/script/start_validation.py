@@ -37,9 +37,5 @@ for f in json_files:
         if (out.decode()).find("Resource is valid") != -1:
             count_valid = count_valid + 1
     p.wait()
-    #output = p.stdout.read()
-    #print (output.decode('ascii'))
-    #if (output.decode()).find("Resource is valid") != -1:
-    #    count_valid = count_valid + 1
 
 print ("Valid / All: ", count_valid, "/", len(json_files))
