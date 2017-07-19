@@ -14,16 +14,25 @@ def get_script_dir(follow_symlinks=True):
 
 script_dir = get_script_dir() 
 
-#"java.exe" "-jar org.hl7.fhir.validator.jar " + res_path + " -defn " + def_path;
 validatorPath = script_dir + '\\FhirValidator\\org.hl7.fhir.validator.jar'
 definitionsPath = script_dir + '\\FhirValidator\\definitions.json.zip'
     
-files = os.listdir(script_dir + '\\resourсes') 
-json_files = filter(lambda x: x.endswith('.json'), files)
+files = os.listdir(script_dir + '\\resources') 
+json_files = list(filter(lambda x: x.endswith('.json'), files))
+count_valid = 0
 for f in json_files:
     resPath = script_dir + '\\resources\\' + f
     cmd = 'java.exe -jar ' + validatorPath + ' ' + resPath + ' -defn ' + definitionsPath
     PIPE = subprocess.PIPE
-    p = subprocess.Popen(cmd)
+    p = subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE)
+    out = ' '
+    while out:
+        out = p.stdout.readline()
+        print(out.rstrip().decode('ascii'))
+        if (out.decode()).find("error:0") != -1:
+            count_valid = count_valid + 1
     p.wait()
+
+print ("Valid / All: ", count_valid, "/", len(json_files))
+
 

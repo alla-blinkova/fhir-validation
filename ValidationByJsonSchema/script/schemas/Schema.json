@@ -1,16 +1,7 @@
-﻿{
+{
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "id": "http://hl7.org/fhir/json-schema/Patient",
-  "$ref": "#/definitions/Patient",
-  "description": "see http://hl7.org/fhir/json.html#schema for information about the FHIR Json Schemas",
-  "definitions": {
-    "Patient": {
-      "allOf": [
-        {
-          "$ref": "DomainResource.schema.json#/definitions/DomainResource"
-        },
-        {
-          "description": "Демографическая и другая административная информация о человеке или животном, получающем медицинскую помощь или другие услуги, связанные со здоровьем.",
+
+          "description": "��������������� � ������ ���������������� ���������� � �������� ��� ��������, ���������� ����������� ������ ��� ������ ������, ��������� �� ���������.",
           "properties": {
             "resourceType": {
               "description": "This is a Patient resource",
@@ -20,32 +11,28 @@
               ]
             },
             "identifier": {
-              "description": "Идентификатор этого пациента.",
+              "description": "������������� ����� ��������.",
               "type": "array",
               "items": {
-                "$ref": "Identifier.schema.json#/definitions/Identifier"
               }
             },
             "active": {
-              "description": "Находится ли данная запись пациента в активном использовании.",
+              "description": "��������� �� ������ ������ �������� � �������� �������������.",
               "type": "boolean"
             },
             "_active": {
               "description": "Extensions for active",
-              "$ref": "Element.schema.json#/definitions/Element"
             },
             "name": {
               "description": "A name associated with the individual.",
               "type": "array",
               "items": {
-                "$ref": "HumanName.schema.json#/definitions/HumanName"
               }
             },
             "telecom": {
               "description": "A contact detail (e.g. a telephone number or an email address) by which the individual may be contacted.",
               "type": "array",
               "items": {
-                "$ref": "ContactPoint.schema.json#/definitions/ContactPoint"
               }
             },
             "gender": {
@@ -60,52 +47,45 @@
             },
             "_gender": {
               "description": "Extensions for gender",
-              "$ref": "Element.schema.json#/definitions/Element"
             },
             "birthDate": {
-              "description": "Дата рождения индивидуума.",
+              "description": "���� �������� �����������.",
               "type": "string",
               "pattern": "-?[0-9]{4}(-(0[1-9]|1[0-2])(-(0[0-9]|[1-2][0-9]|3[0-1]))?)?"
             },
             "_birthDate": {
               "description": "Extensions for birthDate",
-              "$ref": "Element.schema.json#/definitions/Element"
             },
             "deceasedBoolean": {
-              "description": "Указывает, умер ли индивидуум или нет.",
+              "description": "���������, ���� �� ���������� ��� ���.",
               "type": "boolean"
             },
             "_deceasedBoolean": {
               "description": "Extensions for deceasedBoolean",
-              "$ref": "Element.schema.json#/definitions/Element"
             },
             "deceasedDateTime": {
-              "description": "Указывает, умер ли индивидуум или нет.",
+              "description": "���������, ���� �� ���������� ��� ���.",
               "pattern": "-?[0-9]{4}(-(0[1-9]|1[0-2])(-(0[0-9]|[1-2][0-9]|3[0-1])(T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\\.[0-9]+)?(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00)))?)?)?",
               "type": "string"
             },
             "_deceasedDateTime": {
               "description": "Extensions for deceasedDateTime",
-              "$ref": "Element.schema.json#/definitions/Element"
             },
             "address": {
-              "description": "Адрес индивидуума.",
+              "description": "����� �����������.",
               "type": "array",
               "items": {
-                "$ref": "Address.schema.json#/definitions/Address"
               }
             },
             "maritalStatus": {
-              "description": "Данное поле содержит самый последний семейный (гражданский) статус пациента.",
-              "$ref": "CodeableConcept.schema.json#/definitions/CodeableConcept"
+              "description": "������ ���� �������� ����� ��������� �������� (�����������) ������ ��������."
             },
             "multipleBirthBoolean": {
               "description": "Indicates whether the patient is part of a multiple (bool) or indicates the actual birth order (integer).",
               "type": "boolean"
             },
             "_multipleBirthBoolean": {
-              "description": "Extensions for multipleBirthBoolean",
-              "$ref": "Element.schema.json#/definitions/Element"
+              "description": "Extensions for multipleBirthBoolean"
             },
             "multipleBirthInteger": {
               "description": "Indicates whether the patient is part of a multiple (bool) or indicates the actual birth order (integer).",
@@ -113,201 +93,47 @@
               "type": "number"
             },
             "_multipleBirthInteger": {
-              "description": "Extensions for multipleBirthInteger",
-              "$ref": "Element.schema.json#/definitions/Element"
+              "description": "Extensions for multipleBirthInteger"
             },
             "photo": {
-              "description": "Изображение пациента.",
+              "description": "����������� ��������.",
               "type": "array",
               "items": {
-                "$ref": "Attachment.schema.json#/definitions/Attachment"
               }
             },
             "contact": {
-              "description": "Контактное лицо пациента (например опекун, партнер, друг).",
+              "description": "���������� ���� �������� (�������� ������, �������, ����).",
               "type": "array",
               "items": {
-                "$ref": "#/definitions/Patient_Contact"
               }
             },
             "animal": {
-              "description": "Этот пациент является животным.",
-              "$ref": "#/definitions/Patient_Animal"
+              "description": "���� ������� �������� ��������."
             },
             "communication": {
-              "description": "Языки, на которых можно общаться с пациентом о его/ее здоровье.",
+              "description": "�����, �� ������� ����� �������� � ��������� � ���/�� ��������.",
               "type": "array",
               "items": {
-                "$ref": "#/definitions/Patient_Communication"
               }
             },
             "generalPractitioner": {
-              "description": "Назначенный пациенту поставщик медицинских услуг.",
+              "description": "����������� �������� ��������� ����������� �����.",
               "type": "array",
               "items": {
-                "$ref": "Reference.schema.json#/definitions/Reference"
               }
             },
             "managingOrganization": {
-              "description": "Организация, занимающаяся хранением записи пациента.",
-              "$ref": "Reference.schema.json#/definitions/Reference"
+              "description": "�����������, ������������ ��������� ������ ��������."
             },
             "link": {
-              "description": "Ссылка на другой ресурс patient, который имеет отношение к этому же реальному пациенту.",
+              "description": "������ �� ������ ������ patient, ������� ����� ��������� � ����� �� ��������� ��������.",
               "type": "array",
               "items": {
-                "$ref": "#/definitions/Patient_Link"
               }
             }
           },
           "required": [
             "resourceType"
           ]
-        }
-      ]
-    },
-    "Patient_Contact": {
-      "allOf": [
-        {
-          "$ref": "BackboneElement.schema.json#/definitions/BackboneElement"
-        },
-        {
-          "description": "Демографическая и другая административная информация о человеке или животном, получающем медицинскую помощь или другие услуги, связанные со здоровьем.",
-          "properties": {
-            "relationship": {
-              "description": "Характер отношений между пациентом и контактным лицом.",
-              "type": "array",
-              "items": {
-                "$ref": "CodeableConcept.schema.json#/definitions/CodeableConcept"
-              }
-            },
-            "name": {
-              "description": "Имя, ассоциируемое с этим контактным лицом.",
-              "$ref": "HumanName.schema.json#/definitions/HumanName"
-            },
-            "telecom": {
-              "description": "Контактные данные для этого человека, например номер телефона или адрес электронной почты.",
-              "type": "array",
-              "items": {
-                "$ref": "ContactPoint.schema.json#/definitions/ContactPoint"
-              }
-            },
-            "address": {
-              "description": "Адрес контактного лица.",
-              "$ref": "Address.schema.json#/definitions/Address"
-            },
-            "gender": {
-              "description": "Административный пол - пол, который считается полом контактного лица для административных целей и для ведения учета.",
-              "enum": [
-                "male",
-                "female",
-                "other",
-                "unknown"
-              ],
-              "type": "string"
-            },
-            "_gender": {
-              "description": "Extensions for gender",
-              "$ref": "Element.schema.json#/definitions/Element"
-            },
-            "organization": {
-              "description": "Организация, от имени которой действует контактное лицо, или на которую оно работает.",
-              "$ref": "Reference.schema.json#/definitions/Reference"
-            },
-            "period": {
-              "description": "Период времени, в течение которого с этим контактным лицом или организацией можно связываться по поводу данного пациента.",
-              "$ref": "Period.schema.json#/definitions/Period"
-            }
-          }
-        }
-      ]
-    },
-    "Patient_Animal": {
-      "allOf": [
-        {
-          "$ref": "BackboneElement.schema.json#/definitions/BackboneElement"
-        },
-        {
-          "description": "Демографическая и другая административная информация о человеке или животном, получающем медицинскую помощь или другие услуги, связанные со здоровьем.",
-          "properties": {
-            "species": {
-              "description": "Определяет вид животного на высоком уровне таксономической классификации.",
-              "$ref": "CodeableConcept.schema.json#/definitions/CodeableConcept"
-            },
-            "breed": {
-              "description": "Определяет более подробную классификацию вида животного.",
-              "$ref": "CodeableConcept.schema.json#/definitions/CodeableConcept"
-            },
-            "genderStatus": {
-              "description": "Указывает текущее состояние репродуктивных органов животного.",
-              "$ref": "CodeableConcept.schema.json#/definitions/CodeableConcept"
-            }
-          },
-          "required": [
-            "species"
-          ]
-        }
-      ]
-    },
-    "Patient_Communication": {
-      "allOf": [
-        {
-          "$ref": "BackboneElement.schema.json#/definitions/BackboneElement"
-        },
-        {
-          "description": "Демографическая и другая административная информация о человеке или животном, получающем медицинскую помощь или другие услуги, связанные со здоровьем.",
-          "properties": {
-            "language": {
-              "description": "The ISO-639-1 alpha 2 code in lower case for the language, optionally followed by a hyphen and the ISO-3166-1 alpha 2 code for the region in upper case; e.g. \"en\" for English, or \"en-US\" for American English versus \"en-EN\" for England English.",
-              "$ref": "CodeableConcept.schema.json#/definitions/CodeableConcept"
-            },
-            "preferred": {
-              "description": "Показывает, является ли этот язык предпочтительным для пациента (относительно других языков, которыми он владеет на некотором уровне).",
-              "type": "boolean"
-            },
-            "_preferred": {
-              "description": "Extensions for preferred",
-              "$ref": "Element.schema.json#/definitions/Element"
-            }
-          },
-          "required": [
-            "language"
-          ]
-        }
-      ]
-    },
-    "Patient_Link": {
-      "allOf": [
-        {
-          "$ref": "BackboneElement.schema.json#/definitions/BackboneElement"
-        },
-        {
-          "description": "Демографическая и другая административная информация о человеке или животном, получающем медицинскую помощь или другие услуги, связанные со здоровьем.",
-          "properties": {
-            "other": {
-              "description": "Другой ресурс patient, на который указывает ссылка.",
-              "$ref": "Reference.schema.json#/definitions/Reference"
-            },
-            "type": {
-              "description": "Тип связи между этим ресурсом patient и другим ресурсом patient.",
-              "enum": [
-                "replaced-by",
-                "replaces",
-                "refer",
-                "seealso"
-              ],
-              "type": "string"
-            },
-            "_type": {
-              "description": "Extensions for type",
-              "$ref": "Element.schema.json#/definitions/Element"
-            }
-          },
-          "required": [
-            "other"
-          ]
-        }
-      ]
-    }
-  }
+        
 }

@@ -21,7 +21,7 @@ namespace ValidationTest
                 Console.WriteLine(string.Format("Validating: {0}", args[1]));
                 if (res.Valid)
                 {
-                    Console.WriteLine("Resourse is valid.");
+                    Console.WriteLine("Resource is valid.");
                 }
                 else
                 {

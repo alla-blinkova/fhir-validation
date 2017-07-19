@@ -24,10 +24,22 @@ else:
 
 
 files = os.listdir(script_dir + '\\resources') 
-json_files = filter(lambda x: x.endswith('.json'), files)
-for f in json_files: 
+json_files = list(filter(lambda x: x.endswith('.json'), files))
+count_valid = 0
+for f in json_files:
     resoursePath = script_dir + '\\resources\\' + f
     PIPE = subprocess.PIPE
-    p = subprocess.Popen(cmd + ' ' + schemaPath + ' ' + resoursePath)
+    p = subprocess.Popen(cmd + ' ' + schemaPath + ' ' + resoursePath, shell=True, stdout=subprocess.PIPE)
+    out = ' '
+    while out:
+        out = p.stdout.readline()
+        print(out.rstrip().decode('ascii'))
+        if (out.decode()).find("Resource is valid") != -1:
+            count_valid = count_valid + 1
     p.wait()
+    #output = p.stdout.read()
+    #print (output.decode('ascii'))
+    #if (output.decode()).find("Resource is valid") != -1:
+    #    count_valid = count_valid + 1
 
+print ("Valid / All: ", count_valid, "/", len(json_files))

@@ -21,12 +21,12 @@ namespace FhirApp
 
     public class FhirJsonValidator
     {
-        private readonly JsonSchema schema;
+        private readonly JSchema schema;
 
         public FhirJsonValidator(string schemaPath)
         {
             JsonTextReader reader = new JsonTextReader(new StreamReader(schemaPath));
-            schema = JsonSchema.Read(reader);
+            schema = JSchema.Load(reader);
         }
 
         public ValidationResult ValidateSchema(string resoursePath)

@@ -13,7 +13,7 @@ Install-Package Newtonsoft.Json.Schema
 3. Install Python.
 
 ### Running the tests
-1. Put ValidationTest.exe and dll files to the folder "script".
+1. Put ValidationTest.exe and dll files to the folder "script/bin".
 2. Run the script start_validation.py without parameters to perform validation of all resources located in the folder "resources"
 and default schema. 
 To use your own schema, put it to the folder "script/schemas" and run the script with parameter - file name of the schema.
